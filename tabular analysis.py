@@ -2,7 +2,9 @@
 """
 Created on Sat Dec 26 11:25:44 2020
 
-@author: Junhao
+
+#This file mainly explores how topic weights influence number of likes using tabular dataset
+
 """
 
 import pandas as pd
@@ -18,7 +20,6 @@ from sklearn.metrics import mean_squared_error, r2_score
 from statsmodels.formula.api  import ols
 import statsmodels.api as sm
 from sklearn.model_selection import train_test_split
-
 
 from keras.models import Sequential
 from keras.layers import Dense
@@ -39,11 +40,12 @@ topicdata = pd.read_csv(r'/Users/cairo/Google Drive/wechat data/TopicOutcomeAll2
 
 #Q4: To what extent should an account follow the hot topics in news? What is the optimal balance(i.e., topic proportion)  of following trending topics vs. sticking to account expertise? For instance, should an account on fitness share articles about the US election? (This might need extra data about hot news topic in Chinese media)
 
+
+##################################
+#linear regression and XGboost
+##################################
  
 topicdata.head()
-
-list(topicdata.columns.values) 
-
 
 
 y = topicdata.likeCount
@@ -80,23 +82,15 @@ print("RMSE: %f" % (rmse))
 
 mean_squared_error(y_test, preds)
 
-
-
-##################
-
-
-
-
-
-################
+#######################
+#regression with keras
+######################
 
 # split into input (X) and output (Y) variables
 X = pd.concat([X0, X1], axis=1)
 Y = topicdata.likeCount
 
-
 X2 = X.apply(pd.to_numeric, errors='coerce')
-
 Y = Y.astype(float)
 
 X_train, X_test, y_train, y_test = train_test_split(X2, Y, test_size=0.25, random_state=1000)
@@ -129,57 +123,7 @@ hist = pd.DataFrame(history.history)
 hist['epoch'] = history.epoch
 hist.tail()
 
-
-
 ##########################
-
-
-
-
-
-from sklearn.linear_model import LinearRegression
-reg = LinearRegression().fit(X_train, y_train)
-
-preds2 = reg.predict(X_test.astype(float))
-
-mean_squared_error(y_test, preds2)
-
-
-
-# Load the diabetes dataset
-diabetes_X, diabetes_y = datasets.load_diabetes(return_X_y=True)
-
-# Use only one feature
-diabetes_X = diabetes_X[:, np.newaxis, 2]
-
-# Split the data into training/testing sets
-diabetes_X_train = diabetes_X[:-20]
-diabetes_X_test = diabetes_X[-20:]
-
-# Split the targets into training/testing sets
-diabetes_y_train = diabetes_y[:-20]
-diabetes_y_test = diabetes_y[-20:]
-
-# Create linear regression object
-regr = linear_model.LinearRegression()
-
-# Train the model using the training sets
-regr.fit(X, y)
-
-print('Coefficients: \n', regr.coef_)
-
-# Make predictions using the testing set
-diabetes_y_pred = regr.predict(diabetes_X_test)
-
-
-
-est = ols(formula = 'Y ~  X + X2', data = df).fit()
-est.summary()
-
-
-X = sm.add_constant(X.ravel())
-
-
 
 
 
