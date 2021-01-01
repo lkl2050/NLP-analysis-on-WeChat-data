@@ -51,41 +51,7 @@ for index, item in enumerate(DF_list):
     DF_list2.append(df4)
 
 
-DF_list2[0]
-
-DF_list2[0].year
-DF_list2[0].month
-
-DF_list2[0].topic0
-DF_list2[1].topic0
-DF_list2[2].topic0
-type(DF_list2[0].topic0)
-
-
-pd.to_numeric(DF_list2[0].topic0)
-
-DF_list2[0].dtypes
-
-
-DF_list2[0]['topic5'].astype(float)
-DF_list2[0]['topic6'].astype(float)
-
-type(DF_list2[0]['topic6'][0])
-
-
-DF_list2[0].groupby(['year','month']).agg(clicksCount=('topic6', 'mean')).reset_index(drop=False)
-
-
-###########################
-'''
-monthstd_list=[]
-for j in DF_list2:
-    j.clicksCount = pd.to_numeric(j.clicksCount)
-    j.likeCount = pd.to_numeric(j.likeCount)
-    jj = j.groupby(['year','month']).agg(std=('std', 'mean'),clicksCount=('clicksCount', 'mean'), likeCount=('likeCount', 'mean')).reset_index(drop=False)
-    monthstd_list.append(jj)
-
-'''
+###########
 
 monthstd_list=[]
 for j in DF_list2:
@@ -104,28 +70,7 @@ for j in DF_list2:
                                          clicksCount=('clicksCount', 'mean'), likeCount=('likeCount', 'mean')).reset_index(drop=False)
     monthstd_list.append(jj)
     
-
-
 flat_monthstd = pd.concat(monthstd_list)
-
-
-
-#flat_monthstd.groupby(flat_monthstd.index).to_frame()
-
-grouped_df = flat_monthstd.groupby(flat_monthstd.index)
-
-
-grouped_df.head()
-
-
-
-grouped_df.unstack().iloc[:,1]
-
-corrall2 = grouped_df.to_frame()
-
-
-corrall2.plot(y='corr')
-
 
 corrall = flat_monthstd.groupby(flat_monthstd.index)[['topic1','likeCount']].corr().unstack().iloc[:,1]
 
@@ -135,7 +80,7 @@ corrall2.columns = ['corr']
 corrall2
 type(corrall2)
 
-corrall2.plot(y='corr')
+corrall2.plot(y='corr') # plot the correlation of the topic weight of topic1 and like_count
 
 ################################################
 ################################################
@@ -147,12 +92,10 @@ corrall2 = corrall.to_frame()
 corrall2.columns = ['corr'] 
 corrall2.plot(y='corr')
 
-
 corrall = flat_monthstd.groupby(flat_monthstd.index)[['topic14','likeCount']].corr().unstack().iloc[:,1]
 corrall2 = corrall.to_frame()
 corrall2.columns = ['corr'] 
 corrall2.plot(y='corr')
-
 
 corrall = flat_monthstd.groupby(flat_monthstd.index)[['topic14','likeCount']].corr().unstack().iloc[:,1]
 corrall2 = corrall.to_frame()
