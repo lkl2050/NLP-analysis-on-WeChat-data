@@ -81,7 +81,7 @@ corrall2.columns = ['corr']
 corrall2
 type(corrall2)
 
-corrall2.plot(y='corr') # plot the correlation of the topic weight of topic1 and like_count
+corrall2.plot(y='corr') # plot the correlation between the topic weight of topic1 and like_count
 
 ################################################
 ################################################
