@@ -6,6 +6,7 @@ Created on Sun Dec 27 23:21:15 2020
 @author: cairo
 """
 
+# This file mainly explores how different topics influence number of likes over time
 
 
 import pandas as pd
