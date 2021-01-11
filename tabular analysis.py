@@ -44,7 +44,10 @@ topicdata = pd.read_csv(r'/Users/cairo/Google Drive/wechat data/TopicOutcomeAll2
 ##################################
 #linear regression and XGboost
 ##################################
- 
+
+
+###############################################################################################
+#prepare data
 topicdata.head()
 
 
@@ -55,7 +58,7 @@ X0 = topicdata.iloc[:,-20:]
 X1 = topicdata[["clicksCount", "orderNum", "originalFlag"]]
 
 X = pd.concat([X0, X1], axis=1)
-X = sm.add_constant(X)
+X = sm.add_constant(X) #add a intercept term to the regression
 #X.reset_index(drop=True)
 
 #X.index = pd.RangeIndex(len(X.index))
@@ -63,13 +66,17 @@ X = sm.add_constant(X)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=123)
 
 
+###############################################################################################
+#linear regression with all variables
 results = sm.OLS(y.astype(float), X.astype(float)).fit()
 results.summary()
 
+#linear regression with only the topic variables
 results2 = sm.OLS(y.astype(float), X0.astype(float)).fit()
 results2.summary()
 
-
+###############################################################################################
+#xgboost regression
 xg_reg = xgb.XGBRegressor(objective ='reg:linear', colsample_bytree = 0.3, learning_rate = 0.1,
                 max_depth = 5, alpha = 10, n_estimators = 10)
 
@@ -82,20 +89,11 @@ print("RMSE: %f" % (rmse))
 
 mean_squared_error(y_test, preds)
 
+
+###############################################################################################
 #######################
-#regression with keras
+#regression in neural networks with keras
 ######################
-
-# split into input (X) and output (Y) variables
-X = pd.concat([X0, X1], axis=1)
-Y = topicdata.likeCount
-
-X2 = X.apply(pd.to_numeric, errors='coerce')
-Y = Y.astype(float)
-
-X_train, X_test, y_train, y_test = train_test_split(X2, Y, test_size=0.25, random_state=1000)
-
-
 input_dim = X_train.shape[1]  # Number of features
 
 model = Sequential()
