@@ -13,7 +13,7 @@
 To get a general understanding of the content posted by all the influencer accounts, I conducte topic modeling using Latent Dirichlet Allocation(LDA). Given the large computing resource required, the LDA code is ran on the GPU server of my school.  
 
 ##### Examples of the word loading within each topics derived from LDA topic modeling (manually translated to English for illustration purpose)
-<img width="928" alt="image" src="https://user-images.githubusercontent.com/10263993/134822698-00e4e7a1-486c-420c-ba08-4022617123f7.png">
+<img width="785" alt="image" src="https://user-images.githubusercontent.com/10263993/134822953-fe38dcfc-64ce-4f58-86b6-5fb1bc8d1eec.png">
 
 
 ##### Plot the correlation between each topic with likeCount across time, the results show that the popularity of different topics differ signficantly over time. 
