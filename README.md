@@ -22,7 +22,14 @@ To get a general understanding of the content posted by all the influencer accou
 
 ### 2.0 -Tabular analysis.ipynb
 
+Tabular analysis to predict number of likes on the posted articles with different models. Based on mean squared error, th random rorest model performed best.
+The predictors were:  clicksCount: number of clicks on the article, originalFlag: whether the article was originally created (i.e., not shared) by the account, orderNum: wechat allows influencers to upload several articles as a group each day. Influencers decide the order of the articles in the group. Normally, the firs article receives most views.
+
+<img width="298" alt="image" src="https://user-images.githubusercontent.com/10263993/135197051-202a0b10-4c0e-44a8-9fe8-69f1c74ade35.png">
+
+
 ### 3.0 -Time series analysis.ipynb
+
 
 ### 4.0 - RNN and LSTM models.ipynb 
 
