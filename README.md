@@ -20,7 +20,7 @@ To get a general understanding of the content posted by all the influencer accou
 <img width="394" alt="image" src="https://user-images.githubusercontent.com/10263993/134822653-d2333d0f-3f29-4c14-8906-b5d016bd7961.png">
 
 
-### 2.0 -Tabular analysis.ipynb
+### 2.0 -Tabular analysis on likes prediction.ipynb
 
 Tabular analysis to predict number of likes on the posted articles with different models. Based on mean squared error, th random rorest model performed best.
 The predictors were:  clicksCount: number of clicks on the article, originalFlag: whether the article was originally created (i.e., not shared) by the account, orderNum: wechat allows influencers to upload several articles as a group each day. Influencers decide the order of the articles in the group. Normally, the firs article receives most views.
@@ -28,10 +28,18 @@ The predictors were:  clicksCount: number of clicks on the article, originalFlag
 <img width="298" alt="image" src="https://user-images.githubusercontent.com/10263993/135197051-202a0b10-4c0e-44a8-9fe8-69f1c74ade35.png">
 
 
-### 3.0 -Time series analysis.ipynb
+### 3.0 -Time series analysis on likes prediction.ipynb
+
+### 4.0 - RNN and LSTM models on likes prediction.ipynb 
+
+### 4.0 - LSTM models on ad prediction.ipynb 
+To judge if an anticle is an ad, I outsourced the manual labelling of ad to an agency in China. I labelled about 3,000 articles as examples and asked the agency to label 10,000 other articles. In the data, the label 0 means the article contains no ad, 1 means the whole article is ad, and 2 means the main body of the article is not ad, but it includes ad near the end of the article.
+
+Using only features from the text of the articles, I adopted vanilla LSTM, bidirectional LSTM, and stacked LSTM to predict the ad label of the articles. The results below show relatively good prediction accuracy (> 80%) on the testing set. Th bidirectional LSTM model performed best and used longest time to converge.    
+
+<img width="427" alt="image" src="https://user-images.githubusercontent.com/10263993/135727812-869d217a-5cd1-4d4b-9c85-4c845351c90c.png">
 
 
-### 4.0 - RNN and LSTM models.ipynb 
 
 ### 5.0 - BERT models.ipynb
 
