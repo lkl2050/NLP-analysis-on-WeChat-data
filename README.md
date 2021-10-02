@@ -38,7 +38,7 @@ To judge if an anticle is an ad, I outsourced the manual labelling of ad to an a
 <img width="94" alt="image" src="https://user-images.githubusercontent.com/10263993/135727892-bb55584f-28a6-4a00-8146-19753827565b.png">
 
 
-Using only features from the text of the articles, I adopted vanilla LSTM, bidirectional LSTM, and stacked LSTM to predict the ad label of the articles. The results below show relatively good prediction accuracy (> 80%) on the testing set. Th bidirectional LSTM model performed best and used longest time to converge.    
+Using only features from the text of the articles, I adopted vanilla LSTM, bidirectional LSTM, and stacked LSTM to predict the ad label of the articles. The results below show relatively good prediction accuracy (> 80%) on the testing set. Th bidirectional LSTM model performed best and used the longest time to converge. This model showed signs of overfitting after the 2nd epoch.     
 
 <img width="427" alt="image" src="https://user-images.githubusercontent.com/10263993/135727812-869d217a-5cd1-4d4b-9c85-4c845351c90c.png">
 
