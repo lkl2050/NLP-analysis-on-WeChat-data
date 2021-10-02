@@ -33,7 +33,10 @@ The predictors were:  clicksCount: number of clicks on the article, originalFlag
 ### 4.0 - RNN and LSTM models on likes prediction.ipynb 
 
 ### 4.0 - LSTM models on ad prediction.ipynb 
-To judge if an anticle is an ad, I outsourced the manual labelling of ad to an agency in China. I labelled about 3,000 articles as examples and asked the agency to label 10,000 other articles. In the data, the label 0 means the article contains no ad, 1 means the whole article is ad, and 2 means the main body of the article is not ad, but it includes ad near the end of the article.
+To judge if an anticle is an ad, I outsourced the manual labelling of ad to an agency in China. I labelled about a hundred articles as examples and asked the agency to label 10,000 others. In the data, the label A means the article contains no ad, B means the whole article is ad, and C means the main body of the article is not ad, but it includes ad near the end of the article.
+
+<img width="94" alt="image" src="https://user-images.githubusercontent.com/10263993/135727892-bb55584f-28a6-4a00-8146-19753827565b.png">
+
 
 Using only features from the text of the articles, I adopted vanilla LSTM, bidirectional LSTM, and stacked LSTM to predict the ad label of the articles. The results below show relatively good prediction accuracy (> 80%) on the testing set. Th bidirectional LSTM model performed best and used longest time to converge.    
 
