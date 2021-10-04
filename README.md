@@ -79,22 +79,24 @@ Because there is not much trend or seasonality that observed on the day level, I
 #### Similar to above, ARIMA model was adopted to do forecast
 ARIMA MSE: 111725.21
 ARIMA MAPE: 94.77
-![Uploading image.png…]()
+<img width="410" alt="image" src="https://user-images.githubusercontent.com/10263993/135920240-670d22cc-e64c-4305-ae89-9abd2a574120.png">
 
 #### Given the MAPE results, forecasting future months' likes is actually easier than forecasting future day's likes, possibly because more time-series information can be captured on the monthly data. 
 
-### 4.0 - RNN and LSTM models on likes prediction.ipynb 
 
 ### 4.0 - LSTM models on ad prediction.ipynb 
+
 To judge if an anticle is an ad, I outsourced the manual labelling of ad to an agency in China. I labelled about a hundred articles as examples and asked the agency to label 10,000 others. In the data, the label A means the article contains no ad, B means the whole article is ad, and C means the main body of the article is not ad, but it includes ad near the end of the article.
 
 <img width="94" alt="image" src="https://user-images.githubusercontent.com/10263993/135727892-bb55584f-28a6-4a00-8146-19753827565b.png">
 
+Using only features extracted from the text of the articles, I adopted vanilla LSTM, bidirectional LSTM, and stacked LSTM to predict the ad label of the articles. The results below show relatively good prediction accuracy (> 80%) on the testing set. Th bidirectional LSTM model performed best and used the longest time to converge. This model showed signs of overfitting after the 2nd epoch.     
 
-Using only features from the text of the articles, I adopted vanilla LSTM, bidirectional LSTM, and stacked LSTM to predict the ad label of the articles. The results below show relatively good prediction accuracy (> 80%) on the testing set. Th bidirectional LSTM model performed best and used the longest time to converge. This model showed signs of overfitting after the 2nd epoch.     
+<img width="400" alt="image" src="https://user-images.githubusercontent.com/10263993/135920973-044075b5-c325-4e2f-ab8f-93e3d9125c91.png">
 
-<img width="427" alt="image" src="https://user-images.githubusercontent.com/10263993/135727812-869d217a-5cd1-4d4b-9c85-4c845351c90c.png">
+Similar to the abov analysis, I adopted the three LSTM models to predict likes count with only features extracted from the text
 
+<img width="380" alt="image" src="https://user-images.githubusercontent.com/10263993/135920438-02e76822-2cd7-4573-9986-bcd3460f0531.png">
 
 
 ### 5.0 - BERT models.ipynb
