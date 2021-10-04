@@ -29,6 +29,59 @@ The predictors were:  clicksCount: number of clicks on the article, originalFlag
 
 
 ### 3.0 -Time series analysis on likes prediction.ipynb
+#### Analyze the time series with day as the time unit. This gives 1920 days of likes count as the time series dataset. 
+
+#### Naive model forecasting
+I first adopted an naive approach with assumes that the next expected point is equal to the last observed point. 
+Naive forecast MSE: 40500.711534
+Naive forecast MAPE: 3891825798079374.500000
+<img width="989" alt="image" src="https://user-images.githubusercontent.com/10263993/135771601-98f67cf9-e688-4ed8-a7ed-24d203cebb89.png">
+
+#### Simple average forecasting
+This simple average  method forecasts the expected value equal to the average of all previously observed points.
+Simple average MSE: 13333.904245
+Simple average MAPE: 2825187969291605.500000
+<img width="990" alt="image" src="https://user-images.githubusercontent.com/10263993/135772067-26e78f76-2025-43a8-819c-56f9390f463a.png">
+
+#### ARIMA models
+
+##### plot of the time series and checking if it's stationay
+<img width="992" alt="image" src="https://user-images.githubusercontent.com/10263993/135772084-9148ab1b-8ab0-45e3-8983-cca8438eaaaf.png">
+
+##### plot after decomposing the time series
+<img width="710" alt="image" src="https://user-images.githubusercontent.com/10263993/135772100-2ceda14c-8c48-476a-883b-4e63531525e1.png">
+<img width="976" alt="image" src="https://user-images.githubusercontent.com/10263993/135772128-c25612d8-efe4-443f-bd5b-53fdb7637027.png">
+
+
+#####  Since the original data is not stationary, it needs differencing. The result below suggests differencing once is enough to achieve stationary (d = 1 in the ARIMA model)
+<img width="511" alt="image" src="https://user-images.githubusercontent.com/10263993/135772136-4623d6e2-bc8f-4723-892d-483572893596.png">
+
+
+#####  The ACF and PACF plot suggest p = 13, q = 1
+<img width="507" alt="image" src="https://user-images.githubusercontent.com/10263993/135772162-2d68e5a3-aedf-41c0-9695-2f4726d056cf.png">
+<img width="987" alt="image" src="https://user-images.githubusercontent.com/10263993/135772187-e1d2503a-04f3-4955-a8c7-5cb124df3cec.png">
+
+#### Plot the predicted likes count vs. the observed likes count
+ARIMA MSE: 6630.75
+ARIMA MAPE: 101.35
+<img width="1004" alt="image" src="https://user-images.githubusercontent.com/10263993/135772368-eae57a36-d9d8-4c23-b7ce-a64cd6536b11.png">
+
+#### Given the MSE and MAPE results, the ARIMA model clearly performed better than the naive model and the simple average model. 
+
+### Analyze the time series with month as the time unit
+Because there is not much trend or seasonality that observed on the day level, I tried to analyze the data again on the month level. This gives 64 rows of data in the time series. 
+
+#### Again, the original time series is not stationay (figure on top) and it became stationay after differencing (figure at bottom) 
+<img width="1029" alt="image" src="https://user-images.githubusercontent.com/10263993/135772398-dc96b076-ebea-462a-8a34-79f03798b8c4.png">
+
+<img width="1000" alt="image" src="https://user-images.githubusercontent.com/10263993/135772483-143b0c5f-75d2-4116-9876-d62d9f39868b.png">
+
+#### Similar to above, ARIMA model was adopted to do forecast
+ARIMA MSE: 111725.21
+ARIMA MAPE: 94.77
+![Uploading image.png…]()
+
+#### Given the MAPE results, forecasting future months' likes is actually easier than forecasting future day's likes, possibly because more time-series information can be captured on the monthly data. 
 
 ### 4.0 - RNN and LSTM models on likes prediction.ipynb 
 
