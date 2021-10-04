@@ -90,15 +90,25 @@ To judge if an anticle is an ad, I outsourced the manual labelling of ad to an a
 
 <img width="94" alt="image" src="https://user-images.githubusercontent.com/10263993/135727892-bb55584f-28a6-4a00-8146-19753827565b.png">
 
-Using only features extracted from the text of the articles, I adopted vanilla LSTM, bidirectional LSTM, and stacked LSTM to predict the ad label of the articles. The results below show relatively good prediction accuracy (> 80%) on the testing set. Th bidirectional LSTM model performed best and used the longest time to converge. This model showed signs of overfitting after the 2nd epoch.     
+I used the tokenized words as the predictors in the models. Using only features extracted from the text of the articles, I adopted vanilla LSTM, bidirectional LSTM, and stacked LSTM to predict the ad label of the articles. The results below show relatively good prediction accuracy (> 80%) on the testing set. Th bidirectional LSTM model performed best and used the longest time to converge. This model showed signs of overfitting after the 2nd epoch.     
 
 <img width="400" alt="image" src="https://user-images.githubusercontent.com/10263993/135920973-044075b5-c325-4e2f-ab8f-93e3d9125c91.png">
 
-Similar to the abov analysis, I adopted the three LSTM models to predict likes count with only features extracted from the text
-
-<img width="380" alt="image" src="https://user-images.githubusercontent.com/10263993/135920438-02e76822-2cd7-4573-9986-bcd3460f0531.png">
+As a comparison, I trained a SVM classification model with the non-text predictors. The SVM model show an accuracy of 0.669835, which is clearly lower than the accuracy achieved by the LSTM models based on text features. 
 
 
-### 5.0 - BERT models.ipynb
+Similar to the abov analysis, I adopted the three LSTM models to predict likes count with only features extracted from the text. The MSE results below shows that th bidrectional LSTM model performed best, and the other two models almost performed the same. 
+
+<img width="508" alt="image" src="https://user-images.githubusercontent.com/10263993/135936259-adace7fe-21c8-4320-9329-e75f32c7b34e.png">
+
+As a comparison, I trained a linear regression model with the non-text features. The model achieved an MSE of 1010437.907273, which is much lower than the MSE from the bidirectional LSTM: 828027.25
+
+### 5.0 - BERT models on likes prediction.ipynb
+The above analysis with LSTM used only tokenized words as the input, they did no capture the semantic information among the words. This analysis adopted the pretrained BERT model with some fine tunining, trying to achieve a better prediction result.
+
+
+
+
+
 
 
