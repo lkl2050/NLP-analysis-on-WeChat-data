@@ -101,7 +101,7 @@ Similar to the abov analysis, I adopted the three LSTM models to predict likes c
 
 <img width="508" alt="image" src="https://user-images.githubusercontent.com/10263993/135936259-adace7fe-21c8-4320-9329-e75f32c7b34e.png">
 
-As a comparison, I trained a linear regression model with the non-text features. The model achieved an MSE of 1010437.907273, which is much lower than the MSE from the bidirectional LSTM: 828027.25
+As a comparison, I trained a linear regression model with the non-text features. The model achieved an MSE of 1010437.907273, which is much higher than the MSE from the bidirectional LSTM: 828027.25
 
 ### 5.0 - BERT models on likes prediction.ipynb
 The above analysis with LSTM used only tokenized words as the input, they did no capture the semantic information among the words. This analysis adopted the pretrained BERT model with some fine tunining, trying to achieve a better prediction result.
