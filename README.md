@@ -84,8 +84,7 @@ ARIMA MAPE: 94.77
 #### Given the MAPE results, forecasting future months' likes is actually easier than forecasting future day's likes, possibly because more time-series information can be captured on the monthly data. 
 
 
-### 4.0 - LSTM models on ad prediction.ipynb 
-
+### 4.0 - LSTM models on ad classification and likes prediction.ipynb 
 To judge if an anticle is an ad, I outsourced the manual labelling of ad to an agency in China. I labelled about a hundred articles as examples and asked the agency to label 10,000 others. In the data, the label A means the article contains no ad, B means the whole article is ad, and C means the main body of the article is not ad, but it includes ad near the end of the article.
 
 <img width="94" alt="image" src="https://user-images.githubusercontent.com/10263993/135727892-bb55584f-28a6-4a00-8146-19753827565b.png">
@@ -96,17 +95,22 @@ I used the tokenized words as the predictors in the models. Using only features 
 
 As a comparison, I trained a SVM classification model with the non-text predictors. The SVM model show an accuracy of 0.669835, which is clearly lower than the accuracy achieved by the LSTM models based on text features. 
 
-
 Similar to the abov analysis, I adopted the three LSTM models to predict likes count with only features extracted from the text. The MSE results below shows that th bidrectional LSTM model performed best, and the other two models almost performed the same. 
 
 <img width="508" alt="image" src="https://user-images.githubusercontent.com/10263993/135936259-adace7fe-21c8-4320-9329-e75f32c7b34e.png">
 
-As a comparison, I trained a linear regression model with the non-text features. The model achieved an MSE of 1010437.907273, which is much higher than the MSE from the bidirectional LSTM: 828027.25
+As a comparison, I trained a linear regression model with the non-text features. The model achieved an validation MSE of 1010437.907273, which is much higher than the MSE from the bidirectional LSTM: 828027.25
 
-### 5.0 - BERT models on likes prediction.ipynb
-The above analysis with LSTM used only tokenized words as the input, they did no capture the semantic information among the words. This analysis adopted the pretrained BERT model with some fine tunining, trying to achieve a better prediction result.
+### 5.0 - Transfer learning with BERT models on likes prediction.ipynb
+The above analysis with LSTM used only tokenized words as the input, they did no capture the semantic information among the words. This analysis adopted the pretrained BERT model with some fine tunining at the output layer, trying to achieve a better prediction result.
 
+I adopted the pretrained model of bert-base-chinese from the transformers package. After data preprocessing to input the text data into the bert model, I constructed the model as below:   
 
+<img width="876" alt="image" src="https://user-images.githubusercontent.com/10263993/136122483-6ed094ab-e350-43b6-be1c-af8dcbccefef.png">
+
+Given limited computing resources, I only ran three epochs and the results are shown below. Given the decreasing loss over the epochs, the model is likely to be  underfit with three epochs. However, the results already showed a clear improvement over the linear regression and LSTM models in the previous section, because the validation MSE was 810718.6875, which is more than 2% lower than the results from the bidirectional LSTM models. Provided more computing resources for the current BERT model, it is expected to outperform other models more.
+
+<img width="990" alt="image" src="https://user-images.githubusercontent.com/10263993/136122858-8770e2a6-d4d8-41f0-bc8e-e86dda80b850.png">
 
 
 
