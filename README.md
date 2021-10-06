@@ -2,9 +2,9 @@
 
 ## Context
 
-Similar to Facebook, WeChat has an information flow section which allows users to see their friends posts and updates. It is not surpring that plenty of influencer accounts are active on WeChat's information flow, trying to spred news, provide information, promote products and services etc.  \s\s
+Similar to Facebook, WeChat has an information flow section which allows users to see their friends posts and updates. It is not surpring that plenty of influencer accounts are active on WeChat's information flow, trying to spred news, provide information, promote products and services etc.  
 
-I am interested to see if I can predict the number of "likes" of the content created by influencers. Especially, I am insterested in the performance of features extracted by nlp techinques. There is surprinsingly little research or insights on this question derived from data science. In addition, I am also interested to see if textual features can help machine to classify if a post or article from the influencer contains advertisement.   
+I am interested to see if I can predict the number of "likes" of the content created by influencers. Especially, I am insterested in the performance of features extracted by nlp techinques. There is surprinsingly little research or insights on this question derived from data science. In addition, I am also interested to see if textual features can help machine to classify if a post or article from the influencer contains advertisement.  
 
 ## The Dataset
 
@@ -12,9 +12,9 @@ I scrapped 5,517,352 articles from influencer accounts on WeChat. Depending on t
 
 <img width="1270" alt="image" src="https://user-images.githubusercontent.com/10263993/136125214-17f491b8-1fdc-43a3-9db8-0ea418d92b8b.png">
 
-I used number of likes on the articles and ad labels as the dependent variables for the analysis. There are several existing features on each article that can be used as predictors:  \s\s
-clicksCount: number of clicks on the article\s\s
-originalFlag: whether the article was originally created (i.e., not shared) by the account\s\s
+I used number of likes on the articles and ad labels as the dependent variables for the analysis. There are several existing features on each article that can be used as predictors:  
+clicksCount: number of clicks on the article  
+originalFlag: whether the article was originally created (i.e., not shared) by the account  
 orderNum: wechat allows influencers to upload several articles as a group each day. Influencers decide the order of the articles in the group. Normally, the firs article receives most views.
 
 ## Evaluation Metrics
