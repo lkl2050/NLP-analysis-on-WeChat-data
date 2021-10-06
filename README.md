@@ -36,10 +36,7 @@ To get a general understanding of the content posted by all the influencer accou
 
 
 ### 2.0 -Tabular analysis on likes prediction.ipynb
-
 Tabular analysis to predict number of likes on the posted articles with different models. Based on mean squared error, the random rorest model performed best.
-
-
 <img width="298" alt="image" src="https://user-images.githubusercontent.com/10263993/135197051-202a0b10-4c0e-44a8-9fe8-69f1c74ade35.png">
 
 
@@ -54,8 +51,8 @@ Naive forecast MAPE: 3891825798079374.500000
 
 #### Simple average forecasting
 This simple average  method forecasts the expected value equal to the average of all previously observed points.
-Simple average MSE: 13333.904245
-Simple average MAPE: 2825187969291605.500000
+Simple average MSE: 13333.904245  
+Simple average MAPE: 2825187969291605.500000  
 <img width="990" alt="image" src="https://user-images.githubusercontent.com/10263993/135772067-26e78f76-2025-43a8-819c-56f9390f463a.png">
 
 #### ARIMA models
@@ -77,14 +74,14 @@ Simple average MAPE: 2825187969291605.500000
 <img width="987" alt="image" src="https://user-images.githubusercontent.com/10263993/135772187-e1d2503a-04f3-4955-a8c7-5cb124df3cec.png">
 
 #### Plot the predicted likes count vs. the observed likes count
-ARIMA MSE: 6630.75
-ARIMA MAPE: 101.35
+ARIMA MSE: 6630.75  
+ARIMA MAPE: 101.35  
 <img width="1004" alt="image" src="https://user-images.githubusercontent.com/10263993/135772368-eae57a36-d9d8-4c23-b7ce-a64cd6536b11.png">
 
 #### Given the MSE and MAPE results, the ARIMA model clearly performed better than the naive model and the simple average model. 
 
 ### Analyze the time series with month as the time unit
-Because there is not much trend or seasonality that observed on the day level, I tried to analyze the data again on the month level. This gives 64 rows of data in the time series. 
+Because there is not much trend or seasonality that observed on the day level, I tried to analyze the data again on the month level. This gives 64 rows of data in the time series.   
 
 #### Again, the original time series is not stationay (figure on top) and it became stationay after differencing (figure at bottom) 
 <img width="1029" alt="image" src="https://user-images.githubusercontent.com/10263993/135772398-dc96b076-ebea-462a-8a34-79f03798b8c4.png">
@@ -92,12 +89,11 @@ Because there is not much trend or seasonality that observed on the day level, I
 <img width="1000" alt="image" src="https://user-images.githubusercontent.com/10263993/135772483-143b0c5f-75d2-4116-9876-d62d9f39868b.png">
 
 #### Similar to above, ARIMA model was adopted to do forecast
-ARIMA MSE: 111725.21
-ARIMA MAPE: 94.77
+ARIMA MSE: 111725.21  
+ARIMA MAPE: 94.77  
 <img width="410" alt="image" src="https://user-images.githubusercontent.com/10263993/135920240-670d22cc-e64c-4305-ae89-9abd2a574120.png">
 
 #### Given the MAPE results, forecasting future months' likes is actually easier than forecasting future day's likes, possibly because more time-series information can be captured on the monthly data. 
-
 
 ### 4.0 - LSTM models on ad classification and likes prediction.ipynb 
 To judge if an anticle is an ad, I outsourced the manual labelling of ad to an agency in China. I labelled about a hundred articles as examples and asked the agency to label 10,000 others. In the data, the label A means the article contains no ad, B means the whole article is ad, and C means the main body of the article is not ad, but it includes ad near the end of the article.
