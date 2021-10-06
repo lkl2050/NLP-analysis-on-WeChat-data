@@ -2,7 +2,9 @@
 
 ## Context
 
-Similar to Facebook, WeChat has an information flow section which allows users to see their friends posts and updates. It is not surpring that plenty of influencer accounts are active on WeChat's information flow, trying to spred news, provide information, promote products and services etc.  
+Similar to Facebook, WeChat has an information flow section which allows users to see their friends posts and updates. It is not surpring that plenty of influencer accounts are active on WeChat's information flow, trying to spred news, provide information, promote products and services etc.  \s\s
+
+I am interested to see if I can predict the number of "likes" of the content created by influencers. Especially, I am insterested in the performance of features extracted by nlp techinques. There is surprinsingly little research or insights on this question derived from data science. In addition, I am also interested to see if textual features can help machine to classify if a post or article from the influencer contains advertisement.   
 
 ## The Dataset
 
