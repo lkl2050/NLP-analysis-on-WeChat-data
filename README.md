@@ -110,8 +110,7 @@ I adopted the pretrained model of bert-base-chinese from the transformers packag
 
 Given limited computing resources, I only ran three epochs and the results are shown below. Given the decreasing loss over the epochs, the model is likely to be  underfit with three epochs. However, the results already showed a clear improvement over the linear regression and LSTM models in the previous section, because the validation MSE was 810718.6875, which is more than 2% lower than the results from the bidirectional LSTM models. Provided more computing resources for the current BERT model, it is expected to outperform other models more.
 
-<img width="990" alt="image" src="https://user-images.githubusercontent.com/10263993/136122858-8770e2a6-d4d8-41f0-bc8e-e86dda80b850.png">
-
+<img width="1002" alt="image" src="https://user-images.githubusercontent.com/10263993/136123715-b4ff96cd-73aa-4fd6-8a95-97610db1fb34.png">
 
 
 
