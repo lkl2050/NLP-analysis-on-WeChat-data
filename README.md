@@ -2,9 +2,22 @@
 
 ## Context
 
+Similar to Facebook, WeChat has an information flow section which allows users to see their friends posts and updates. It is not surpring that plenty of influencer accounts are active on WeChat's information flow, trying to spred news, provide information, promote products and services etc.  
+
 ## The Dataset
 
+I scrapped 5,517,352 articles from influencer accounts on WeChat. Depending on tasks, I put different sizes of subsets of the dataset into analysis. An sample dataset is shown below. 
+
+<img width="1270" alt="image" src="https://user-images.githubusercontent.com/10263993/136125214-17f491b8-1fdc-43a3-9db8-0ea418d92b8b.png">
+
+I used number of likes on the articles and ad labels as the dependent variables for the analysis. There are several existing features on each article that can be used as predictors:  \s\s
+clicksCount: number of clicks on the article\s\s
+originalFlag: whether the article was originally created (i.e., not shared) by the account\s\s
+orderNum: wechat allows influencers to upload several articles as a group each day. Influencers decide the order of the articles in the group. Normally, the firs article receives most views.
+
 ## Evaluation Metrics
+For predicting likes count, I used mean squared error (MSE) and mean absolute percentage error (MAPE) as the evaluation metrics of the regression task. 
+For ad classification task, I mained used prediction accuracy as the evaluation metric. Since I am interested in both false positive and negative cases and the d label is relatively balanced, accuracy is a good metric to describe the prediction results.   
 
 ## Notebooks
 
@@ -22,8 +35,8 @@ To get a general understanding of the content posted by all the influencer accou
 
 ### 2.0 -Tabular analysis on likes prediction.ipynb
 
-Tabular analysis to predict number of likes on the posted articles with different models. Based on mean squared error, th random rorest model performed best.
-The predictors were:  clicksCount: number of clicks on the article, originalFlag: whether the article was originally created (i.e., not shared) by the account, orderNum: wechat allows influencers to upload several articles as a group each day. Influencers decide the order of the articles in the group. Normally, the firs article receives most views.
+Tabular analysis to predict number of likes on the posted articles with different models. Based on mean squared error, the random rorest model performed best.
+
 
 <img width="298" alt="image" src="https://user-images.githubusercontent.com/10263993/135197051-202a0b10-4c0e-44a8-9fe8-69f1c74ade35.png">
 
