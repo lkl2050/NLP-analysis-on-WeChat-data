@@ -104,7 +104,7 @@ As a comparison, I trained a linear regression model with the non-text features.
 ### 5.0 - Transfer learning with BERT models on likes prediction.ipynb
 The above analysis with LSTM used only tokenized words as the input, they did no capture the semantic information among the words. This analysis adopted the pretrained BERT model with some fine tunining at the output layer, trying to achieve a better prediction result.
 
-I adopted the pretrained model of bert-base-chinese from the transformers package. After data preprocessing to input the text data into the bert model, I constructed the model as below:   
+I adopted the pretrained model of bert-base-chinese from the transformers package. After data preprocessing to input the text data into the bert model, I constructed the model as below. I froze the bert layers so I don't need train them on my side. Instead, I used the semantic information from these pretrained layers to extract more insight from my own text data.     
 
 <img width="876" alt="image" src="https://user-images.githubusercontent.com/10263993/136122483-6ed094ab-e350-43b6-be1c-af8dcbccefef.png">
 
