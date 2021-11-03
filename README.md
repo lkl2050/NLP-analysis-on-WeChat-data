@@ -102,8 +102,6 @@ To judge if an anticle is an ad, I outsourced the manual labelling of ad to an a
 
 I used the tokenized words as the predictors in the models. Using only features extracted from the text of the articles, I adopted vanilla LSTM, bidirectional LSTM, and stacked LSTM to predict the ad label of the articles. The results below show relatively good prediction accuracy (> 80%) on the testing set. Th bidirectional LSTM model performed best and used the longest time to converge. This model showed signs of overfitting after the 2nd epoch.     
 
-<img width="410" alt="image" src="https://user-images.githubusercontent.com/10263993/135920240-670d22cc-e64c-4305-ae89-9abd2a574120.png">
-
 <img width="400" alt="image" src="https://user-images.githubusercontent.com/10263993/135920973-044075b5-c325-4e2f-ab8f-93e3d9125c91.png">
 
 As a comparison, I trained a SVM classification model with the non-text predictors. The SVM model show an accuracy of 0.669835, which is clearly lower than the accuracy achieved by the LSTM models based on text features.   
