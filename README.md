@@ -91,12 +91,13 @@ Because there is not much trend or seasonality that observed on the day level, I
 #### Similar to above, ARIMA model was adopted to do forecast
 ARIMA MSE: 111725.21  
 ARIMA MAPE: 94.77  
-<img width="410" alt="image" src="https://user-images.githubusercontent.com/10263993/135920240-670d22cc-e64c-4305-ae89-9abd2a574120.png">
 
 #### Given the MAPE results, forecasting future months' likes is actually easier than forecasting future day's likes, possibly because more time-series information can be captured on the monthly data. 
 
 ### 4.0 - LSTM models on ad classification and likes prediction.ipynb   
 To judge if an anticle is an ad, I outsourced the manual labelling of ad to an agency in China. I labelled about a hundred articles as examples and asked the agency to label 10,000 others. In the data, the label A means the article contains no ad, B means the whole article is ad, and C means the main body of the article is not ad, but it includes ad near the end of the article.
+
+<img width="410" alt="image" src="https://user-images.githubusercontent.com/10263993/135920240-670d22cc-e64c-4305-ae89-9abd2a574120.png">
 
 <img width="94" alt="image" src="https://user-images.githubusercontent.com/10263993/135727892-bb55584f-28a6-4a00-8146-19753827565b.png">
 
