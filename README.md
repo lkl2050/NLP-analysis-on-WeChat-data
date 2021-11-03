@@ -106,7 +106,7 @@ I used the tokenized words as the predictors in the models. Using only features 
 
 As a comparison, I trained a SVM classification model with the non-text predictors. The SVM model show an accuracy of 0.669835, which is clearly lower than the accuracy achieved by the LSTM models based on text features.   
 
-Similar to the abov analysis, I adopted the three LSTM models to predict likes count with only features extracted from the text. The MSE results below shows that th bidrectional LSTM model performed best, and the other two models almost performed the same.   
+Similar to the above analysis, I adopted the three LSTM models to predict likes count with only features extracted from the text. The MSE results below shows that th bidrectional LSTM model performed best, and the other two models almost performed the same.   
 
 <img width="508" alt="image" src="https://user-images.githubusercontent.com/10263993/135936259-adace7fe-21c8-4320-9329-e75f32c7b34e.png">
  
