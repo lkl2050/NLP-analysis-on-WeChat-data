@@ -12,10 +12,10 @@ I scrapped 5,517,352 articles from influencer accounts on WeChat. Depending on t
 
 <img width="1270" alt="image" src="https://user-images.githubusercontent.com/10263993/136125214-17f491b8-1fdc-43a3-9db8-0ea418d92b8b.png">
 
-I used number of likes on the articles and ad labels as the dependent variables for the analysis. There are several existing features on each article that can be used as predictors:  
-clicksCount: number of clicks on the article  
-originalFlag: whether the article was originally created (i.e., not shared) by the account  
-orderNum: wechat allows influencers to upload several articles as a group each day. Influencers decide the order of the articles in the group. Normally, the firs article receives most views.
+I used number of _likes_ on the articles and _ad labels_ as the dependent variables for the analysis. There are several existing features on each article that can be used as predictors:  
+_clicksCount_: number of clicks on the article  
+_originalFlag_: whether the article was originally created (i.e., not shared) by the account  
+_orderNum_: wechat allows influencers to upload several articles as a group each day. Influencers decide the order of the articles in the group. Normally, the firs article receives most views.
 
 ## Evaluation Metrics
 For predicting likes count, I used mean squared error (MSE) and mean absolute percentage error (MAPE) as the evaluation metrics of the regression task. 
