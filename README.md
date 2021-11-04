@@ -36,7 +36,7 @@ To get a general understanding of the content posted by all the influencer accou
 
 
 ### 2.0 -Tabular analysis on likes prediction.ipynb
-Tabular analysis to predict number of likes on the posted articles with different models. Based on mean squared error, the random rorest model performed best.  
+I conducted tabular analysis with non-text predictors to predict number of likes on the posted articles with different models. Based on mean squared error, the random rorest model performed best.  
 <img width="298" alt="image" src="https://user-images.githubusercontent.com/10263993/135197051-202a0b10-4c0e-44a8-9fe8-69f1c74ade35.png">
 
 
@@ -65,11 +65,9 @@ Simple average MAPE: 2825187969291605.500000
 <img width="976" alt="image" src="https://user-images.githubusercontent.com/10263993/135772128-c25612d8-efe4-443f-bd5b-53fdb7637027.png">  
 
 
-#####  Since the original data is not stationary, it needs differencing. The result below suggests differencing once is enough to achieve stationary (d = 1 in the ARIMA model)  
+#####  Since the original data is not stationary, it needs differencing. The result below suggests differencing once is enough to achieve stationary (d = 1 in the ARIMA model). The ACF and PACF plot suggest p = 13, q = 1 
 <img width="511" alt="image" src="https://user-images.githubusercontent.com/10263993/135772136-4623d6e2-bc8f-4723-892d-483572893596.png">
 
-
-#####  The ACF and PACF plot suggest p = 13, q = 1  
 <img width="507" alt="image" src="https://user-images.githubusercontent.com/10263993/135772162-2d68e5a3-aedf-41c0-9695-2f4726d056cf.png">
 <img width="987" alt="image" src="https://user-images.githubusercontent.com/10263993/135772187-e1d2503a-04f3-4955-a8c7-5cb124df3cec.png">
 
@@ -100,7 +98,7 @@ To judge if an anticle is an ad, I outsourced the manual labelling of ad to an a
 
 <img width="94" alt="image" src="https://user-images.githubusercontent.com/10263993/135727892-bb55584f-28a6-4a00-8146-19753827565b.png">
 
-I used the tokenized words as the predictors in the models. Using only features extracted from the text of the articles, I adopted vanilla LSTM, bidirectional LSTM, and stacked LSTM to predict the ad label of the articles. The results below show relatively good prediction accuracy (> 80%) on the testing set. Th bidirectional LSTM model performed best and used the longest time to converge. This model showed signs of overfitting after the 2nd epoch.     
+I used the tokenized words as the predictors in the models. Using only features extracted from the text of the articles, I adopted vanilla LSTM, bidirectional LSTM, and stacked LSTM to predict the ad label of the articles. The results below show relatively good prediction accuracy (> 80%) on the testing set. The bidirectional LSTM model performed best and used the longest time to converge. This model showed signs of overfitting after the 2nd epoch.     
 
 <img width="400" alt="image" src="https://user-images.githubusercontent.com/10263993/135920973-044075b5-c325-4e2f-ab8f-93e3d9125c91.png">
 
