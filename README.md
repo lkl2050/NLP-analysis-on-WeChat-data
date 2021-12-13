@@ -112,7 +112,7 @@ Similar to the above analysis, I adopted the three LSTM models to predict likes 
 As a comparison, I trained a linear regression model with the non-text features. The model achieved an validation MSE of 1010437.907273, which is 18% higher than the MSE from the bidirectional LSTM: 828027.25
 
 ### 5.0 - Transfer learning with BERT models on likes prediction.ipynb
-The above analysis with LSTM used only tokenized words as the input, they did no capture the semantic information among the words. This analysis adopted the pretrained BERT model with some fine tunining at the output layer, trying to achieve a better prediction result.
+The above analysis with LSTM used only tokenized words (i.e., one-hot encoding) as the input, they did no capture the semantic information among the words. This analysis adopted the pretrained BERT model with some fine tunining at the output layer, trying to achieve a better prediction result.
 
 I adopted the pretrained model of bert-base-chinese from the transformers package. After data preprocessing to input the text data into the bert model, I constructed the model as below. I froze the bert layers so I don't need train them on my side. Instead, I used the semantic information from these pretrained layers to extract more insight from my own text data.        
 
