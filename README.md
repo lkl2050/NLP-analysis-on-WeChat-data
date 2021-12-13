@@ -75,7 +75,7 @@ Simple average MAPE: 2825187969291605.500000
 #### Plot the predicted likes count vs. the observed likes count  
 ARIMA MSE: 6630.75  
 ARIMA MAPE: 101.35  
-<img width="1004" alt="image" src="https://user-images.githubusercontent.com/10263993/135772368-eae57a36-d9d8-4c23-b7ce-a64cd6536b11.png">
+
 
 #### Given the MSE and MAPE results, the ARIMA model clearly performed better than the naive model and the simple average model.   
 
