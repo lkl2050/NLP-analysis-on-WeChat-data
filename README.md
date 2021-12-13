@@ -20,7 +20,7 @@ _orderNum_: wechat allows influencers to upload several articles as a group each
 
 ## Evaluation Metrics
 For predicting likes count, I used mean squared error (MSE) and mean absolute percentage error (MAPE) as the evaluation metrics of the regression task. 
-For ad classification task, I mainly used prediction accuracy as the evaluation metric. Since I am interested in both false positive and negative cases and the d label is relatively balanced, accuracy is a good metric to describe the prediction results.   
+For ad classification task, I mainly used prediction accuracy as the evaluation metric. Since I am interested in both false positive and negative cases and the labels are relatively balanced, accuracy is a good metric to describe the prediction results.   
 
 ## Notebooks
 
