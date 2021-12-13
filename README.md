@@ -16,7 +16,7 @@ I used number of _likes_ on the articles and _ad labels_ as the dependent variab
 
 _clicksCount_: number of clicks on the article  
 _originalFlag_: whether the article was originally created (i.e., not shared) by the account  
-_orderNum_: wechat allows influencers to upload several articles as a group each day. Influencers decide the order of the articles in the group. Normally, the firs article receives most views.
+_orderNum_: wechat allows influencers to upload several articles as a group each day. Influencers decide the order of the articles in the group. Usually, the first article receives most views.
 
 ## Evaluation Metrics
 For predicting likes count, I used mean squared error (MSE) and mean absolute percentage error (MAPE) as the evaluation metrics of the regression task. 
